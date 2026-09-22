@@ -96,7 +96,8 @@ public class CommandManager {
                 .then(Commands.literal("color")
                         .then(Commands.argument("name", StringArgumentType.word())
                                 .then(Commands.argument("color", StringArgumentType.word())
-                                        .executes(ctx -> FriendCommand.color(StringArgumentType.getString(ctx, "name"), StringArgumentType.getString(ctx, "color")))))
+                                        .executes(ctx -> FriendCommand.color(StringArgumentType.getString(ctx, "name"), StringArgumentType.getString(ctx, "color"))))
+                        )
         );
     }
 
