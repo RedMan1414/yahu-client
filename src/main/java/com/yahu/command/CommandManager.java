@@ -84,7 +84,7 @@ public class CommandManager {
     }
 
     private static void registerFriendCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
-        dispatcher.register(Commands.literal("friend")
+        LiteralArgumentBuilder<CommandSourceStack> builder = Commands.literal("friend")
                 .then(Commands.literal("add")
                         .then(Commands.argument("name", StringArgumentType.word())
                                 .executes(ctx -> FriendCommand.add(StringArgumentType.getString(ctx, "name")))))
@@ -97,13 +97,12 @@ public class CommandManager {
                         .then(Commands.argument("name", StringArgumentType.word())
                                 .then(Commands.argument("color", StringArgumentType.word())
                                         .executes(ctx -> FriendCommand.color(StringArgumentType.getString(ctx, "name"), StringArgumentType.getString(ctx, "color"))))
-                        )
-                )
-        );
+                        );
+        dispatcher.register(builder);
     }
 
     private static void registerWaypointCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
-        dispatcher.register(Commands.literal("waypoint")
+        LiteralArgumentBuilder<CommandSourceStack> builder = Commands.literal("waypoint")
                 .then(Commands.literal("add")
                         .then(Commands.argument("name", StringArgumentType.word())
                                 .then(Commands.argument("x", IntegerArgumentType.integer())
@@ -122,8 +121,8 @@ public class CommandManager {
                         .then(Commands.argument("name", StringArgumentType.word())
                                 .executes(ctx -> WaypointCommand.teleport(StringArgumentType.getString(ctx, "name")))))
                 .then(Commands.literal("list")
-                        .executes(ctx -> WaypointCommand.list()))
-        );
+                        .executes(ctx -> WaypointCommand.list()));
+        dispatcher.register(builder);
     }
 
     private static void registerAccountCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
