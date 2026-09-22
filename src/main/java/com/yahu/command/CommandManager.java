@@ -123,7 +123,7 @@ public class CommandManager {
                                 .executes(ctx -> WaypointCommand.teleport(StringArgumentType.getString(ctx, "name")))))
                 .then(Commands.literal("list")
                         .executes(ctx -> WaypointCommand.list()))
-        );
+        )
     }
 
     private static void registerAccountCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
