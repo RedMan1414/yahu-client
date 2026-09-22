@@ -41,9 +41,6 @@ dependencies {
 
 	// Baritone (shaded later)
 	implementation "com.google.guava:guava:33.3.1-jre"
-
-	// Shaders (optional)
-	implementation "net.irisshaders:iris:3.2.0"
 }
 
 processResources {
