@@ -97,7 +97,7 @@ public class CommandManager {
                         .then(Commands.argument("name", StringArgumentType.word())
                                 .then(Commands.argument("color", StringArgumentType.word())
                                         .executes(ctx -> FriendCommand.color(StringArgumentType.getString(ctx, "name"), StringArgumentType.getString(ctx, "color"))))
-                        );
+                        )));
         dispatcher.register(builder);
     }
 
@@ -121,7 +121,7 @@ public class CommandManager {
                         .then(Commands.argument("name", StringArgumentType.word())
                                 .executes(ctx -> WaypointCommand.teleport(StringArgumentType.getString(ctx, "name"))))
                 .then(Commands.literal("list")
-                        .executes(ctx -> WaypointCommand.list());
+                        .executes(ctx -> WaypointCommand.list()))
         dispatcher.register(builder);
     }
 
