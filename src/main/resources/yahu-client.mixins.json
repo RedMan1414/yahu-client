@@ -1,0 +1,23 @@
+{
+	"required": true,
+	"package": "com.yahu.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"refmap": "yahu-client.refmap.json",
+	"mixins": [
+		"MinecraftClientMixin",
+		"PlayerEntityMixin",
+		"ClientPlayNetworkHandlerMixin",
+		"PlayerListEntryMixin",
+		"ScoreboardMixin",
+		"TeamMixin",
+		"BlockBreakerMixin",
+		"ItemUsageMixin",
+		"PlayerInventoryMixin",
+		"TextRendererMixin"
+	],
+	"client": [],
+	"server": [],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

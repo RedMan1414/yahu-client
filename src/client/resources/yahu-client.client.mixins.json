@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "com.yahu.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"refmap": "yahu-client.refmap.json",
+	"mixins": [
+		"GameRendererMixin",
+		"GuiGraphicsMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
